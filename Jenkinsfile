@@ -8,7 +8,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'monsite-Docker'                         // Nom de l'image Docker à construire
         CONTAINER_NAME = 'monsite-Docker-conteneur'           // Nom du conteneur à créer
-        GIT_REPO = 'https://github.com/HhassenMALEK/TP-JenkinsDockcker.git' // URL du repo GitHub à cloner
+        GIT_REPO = 'https://github.com/HhassenMALEK/TP-JenkinsDockcker' // URL du repo GitHub à cloner
     }
 
     // Définition des différentes étapes du pipeline
