@@ -17,7 +17,7 @@ pipeline {
         // Étape 1 : Clonage du dépôt GitHub
         stage('Cloner le repo') {
             steps {
-                git url: "${env.GIT_REPO}" // Clone le dépôt depuis l’URL 
+                git checkout:'main', url "${env.GIT_REPO}" // Clone le dépôt depuis l’URL 
             }
         }
 
