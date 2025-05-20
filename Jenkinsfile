@@ -6,8 +6,8 @@ pipeline {
 
     // Déclaration des variables d’environnement utilisables dans tout le pipeline
     environment {
-        IMAGE_NAME = 'monsite-Docker'                         // Nom de l'image Docker à construire
-        CONTAINER_NAME = 'monsite-Docker-conteneur'           // Nom du conteneur à créer
+        IMAGE_NAME = 'monsite-docker'                         // Nom de l'image Docker à construire
+        CONTAINER_NAME = 'monsite-docker-conteneur'           // Nom du conteneur à créer
         GIT_REPO = 'https://github.com/HhassenMALEK/TP-JenkinsDockcker' // URL du repo GitHub à cloner
     }
 
@@ -17,7 +17,7 @@ pipeline {
         // Étape 1 : Clonage du dépôt GitHub
         stage('Cloner le repo') {
             steps {
-                git branch: 'main', url: "${env.GIT_REPO}"// Clone le dépôt depuis l’URL 
+               git branch: 'main', url: "${env.GIT_REPO}"// Clone le dépôt depuis l’URL 
             }
         }
 
