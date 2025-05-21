@@ -1,0 +1,40 @@
+TP Jenkins Docker
+Configuration demandée
+Jenkins doit être fonctionnel sur la machine
+Docker doit être installé sur la même machine que Jenkins
+L’utilisateur Jenkins doit pouvoir exécuter des commandes Docker ( sudo usermod -aG docker jenkins , redémarrage de
+jenkins/hôte requis)
+
+Sujet
+
+Vous devez créer :
+Un repo github public qui doit contenir :
+Un Dockerfile (c'est le fichier, sans extension, qui permet de créer des images Docker)
+Un index.html
+Une pipeline Jenkins (pas forcément dans le repo github, mais comme vous voulez) qui va devoir :
+
+Cloner le repo github
+Vérifier si les fichiers index.html et Dockerfile sont présents
+Construire l'image Docker, qu'on va nommer "monsite-Docker"
+Supprimer un conteneur s'il est déjà existant
+
+Déployer/lancer un nouveau conteneur nommé "monsite-Docker-conteneur" :
+Avec une redirection du port 8081 de l'hôte au port 80 du conteneur
+Le tout doit être entièrement fait par la pipeline Jenkins lorsqu'il y a un build (que le build soit lancé
+automatiquement ou via le bouton manuel)
+
+Petite aide :
+Utilisez les variables d'environnement pour ne pas répéter des valeurs, exemple : le nom des conteneurs et de l'image.
+environment {
+IMAGE_NAME = 'monsite-Docker'
+CONTAINER_NAME = 'monsite-Docker-conteneur'
+}
+
+Dockerfile :
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+
+Pour que je valide votre travail :
+La pipeline doit s'exécuter sans erreur
+Le site est accessible via l'IP du Jenkins au port 8081
+L'image Docker contient bien le fichier HTML
