@@ -1,4 +1,4 @@
-// la déclaration de pipeline (pipeline déclaratif)
+
 pipeline {
     
     // L’agent définit sur quelle machine Jenkins exécutera ce pipeline (ici "any" = n’importe quel agent disponible)
@@ -8,7 +8,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'monsite-docker'                         // Nom de l'image Docker à construire
         CONTAINER_NAME = 'monsite-docker-conteneur'           // Nom du conteneur à créer
-        GIT_REPO = 'https://github.com/HhassenMALEK/TP-JenkinsDockcker' // URL du repo GitHub à cloner
+        GIT_REPO = 'https://github.com/HhassenMALEK/TP-JenkinsDockcker' // URL de mon repo GitHub à cloner
     }
 
     // Définition des différentes étapes du pipeline
